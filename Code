@@ -1,0 +1,12 @@
+EnablePrimaryMouseButtonEvents(true)
+function OnEvent(event, arg)
+    if not IsKeyLockOn("capslock") then return end
+    if event == "MOUSE_BUTTON_PRESSED" and (arg == 1 or arg == 3) then
+        if IsMouseButtonPressed(1) and IsMouseButtonPressed(3) then
+            repeat
+                MoveMouseRelative(0, 8)  --look here boi
+                Sleep(9)
+            until not IsMouseButtonPressed(1) or not IsMouseButtonPressed(3)
+        end
+    end
+end
